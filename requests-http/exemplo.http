@@ -1,0 +1,27 @@
+http://127.0.0.1:3000/cursos
+
+###
+
+POST 'http://127.0.0.1:3000/cursos' HTTP/1.1
+content-type: application/json
+
+{ 
+    "nome": "Java" 
+}
+
+###
+
+POST http://127.0.0.1:3000/cursos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "john" 
+}
+###
+
+POST http://localhost:3000/cursos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "sample" 
+}

@@ -1,0 +1,20 @@
+<h3>diretivas-customizadas</h3>
+
+
+<div *ngIf="mostrarCursos">Lista de Cursos aqui.</div>
+<div *appNgElse="mostrarCursos">Não existem cursos para serem listados.</div>
+
+<ng-template [appNgElse]="mostrarCursos"> 
+    <div>
+        Não existem cursos para serem listados.(template)
+    </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="onMostrarCursos()">Mostra ou esconder cursos</button>
+<br><br>
+
+<p [appHighlight]="'red'" [defaultColor]="'grey'"> Texto com highlight com cores customizadas.</p>
+<p appHighlightMouse> Texto com highlight quando passo o mouse.</p>
+
+<p appFundoAmarelo>texto com fundo amarelo.</p>
+<button appFundoAmarelo>texto com fundo amarelo.</button>

@@ -1,0 +1,36 @@
+<h3>Diretiva *ngIf</h3>
+
+<div *ngIf="cursos.length > 0">Lista de Cursos aqui.</div>
+<div *ngIf="cursos.length == 0 ">Não existem cursos para serem listados.</div>
+
+<button class="btn btn-primary" (click)="onMostrarCursos()">Mostra ou esconder cursos</button>
+
+<div *ngIf="mostrarCursos">Lista de Cursos aqui.</div>
+<div *ngIf="!mostrarCursos">Não existem cursos para serem listados.</div>
+
+<ng-template [ngIf]="!mostrarCursos">
+    <div>Forma por tras dos panos de como funciona o *ngIf</div>
+</ng-template>
+
+
+<h5>Alternativa com hidden</h5>
+<div [hidden]="!mostrarCursos">Lista de Cursos aqui.</div>
+<div [hidden]="mostrarCursos">Não existem cursos para serem listados.</div>
+
+
+
+<br><br><br>
+<h3>Nested If // if aninhado</h3>
+<ng-container *ngIf="false; then then_01; else else_01"></ng-container>
+<ng-template #then_01>
+    <ng-container *ngIf="false; then then_02; else else_02"></ng-container>
+    <ng-template #then_02>
+        <div>Then 02 block content</div>
+    </ng-template>
+    <ng-template #else_02>
+        <div>Else 02 block content</div>
+    </ng-template>
+</ng-template>
+<ng-template #else_01>
+  <div>Else 01 block content</div>
+</ng-template>

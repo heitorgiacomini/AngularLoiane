@@ -1,0 +1,13 @@
+<h3>Diretiva *ngClass</h3>
+<i  style="font-size: 2rem;" class="bi " 
+    [class.bi-star]="!meuFavorito"
+    [class.bi-star-fill]="meuFavorito"
+    (click)="meuFavorito = !meuFavorito"></i>
+
+
+<i  style="font-size: 2rem;" 
+    [ngClass]="{
+        'bi-star':!meuFavorito,
+        'bi-star-fill':meuFavorito
+    }" 
+    (click)="meuFavorito = !meuFavorito"></i>

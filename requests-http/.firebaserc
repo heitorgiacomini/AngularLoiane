@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "curso-loiane": {
+      "hosting": {
+        "requests-http": [
+          "curso-loiane"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "curso-loiane"
+  }
+}

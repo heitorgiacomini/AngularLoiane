@@ -1,0 +1,28 @@
+<p>Detalhe do aluno.</p>
+<br />
+<label for="detalhe_id" class="form-label">Id</label>
+<input
+  type="text"
+  class="form-control"
+  id="detalhe_id"
+  [(ngModel)]="aluno.id"
+  readonly
+/>
+<label for="detalhe_nome" class="form-label">Nome</label>
+<input
+  type="text"
+  class="form-control"
+  id="detalhe_nome"
+  [(ngModel)]="aluno.nome"
+  (input)="onInput()"
+/>
+<label for="detalhe_email" class="form-label">Email</label>
+<input
+  type="text"
+  class="form-control"
+  id="detalhe_email"
+  [(ngModel)]="aluno.email"
+  (input)="onInput()"
+/>
+
+<button class="btn btn-primary">Salvar</button>

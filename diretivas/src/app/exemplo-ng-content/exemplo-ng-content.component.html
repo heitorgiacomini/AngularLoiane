@@ -1,0 +1,15 @@
+<h3>exemplo-ng-content</h3>
+
+
+<div class="card">
+    <div class="card-header">
+        <ng-content select=".titulo"></ng-content>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>
+            <ng-content select=".corpo"></ng-content>
+        </p> 
+      </blockquote>
+    </div>
+  </div>

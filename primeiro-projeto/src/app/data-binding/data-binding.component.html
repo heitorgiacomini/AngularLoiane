@@ -1,0 +1,104 @@
+ 
+<section>
+    <article>
+        <h3>Input/Output Properties</h3>
+        <contador [valor]="10"
+            (mudouValor)="onMudouValor($event)" ></contador>
+        <app-curso [nome]="nomeDoCurso" ></app-curso>
+    </article>
+</section>
+<br><br><br>
+<section>
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+            <br><br>
+
+
+            <input type="text" 
+                [value]="nome"
+                (input)="nome = $any($event.target).value">
+            <p>Você digitou: {{nome}}</p>
+
+            <input type="text"   
+                (input)="texto.value"
+                #texto>
+            <p>Você digitou: {{texto.value}}</p>
+
+            <input type="text"   
+                [ngModel]="nome" 
+                (ngModelChange)="nome = $any($event)">
+            <br>
+            <input type="text" [(ngModel)]="nome">
+        </div>
+    </article>
+</section>
+<br><br><br><br>
+
+<section class="property-binding">
+    <article>
+        <h3>Event binding</h3>
+        <div>
+            <button  (click)="botaoClicado()"
+            class="btn btn-primary">Me Click!</button><br><br>
+            <input type="text" 
+                    (keyup)="onKeyUp($event)" 
+                    (keyup.enter)="salvarValor(campoInput.value)"
+                    (blur)="salvarValor(campoInput.value)"
+                    #campoInput>
+            <p>valor atual: {{valorAtual}}</p>
+            <p>valor atual: {{valorSalvo}}</p>
+            <br><br>
+            <span
+                (mouseover)="onMouseOverOut()"
+                (mouseout)="onMouseOverOut()"
+                [class.highlight]="isMouseOver"
+                
+                >Passe o mouse sobre mim</span>
+        </div>
+    </article><br><br>
+
+    <article>
+        <h3>class e style binding</h3>
+        <div>Selecione:
+            <select #classe (change)="0">
+                <option value="alert-success">Sucesso</option>       
+                <option value="alert-info">INFO</option>
+                <option value="alert-secondary">Secondary</option>
+                <option value="alert-danger">Danger</option>
+            </select>
+        </div>
+        <br><br>
+
+        <div class="alert {{classe.value}}"  role="alert">...</div>
+        <div class="alert" role="alert"  
+            [class.alert-sucess]="classe.value == 'alert-sucess'" >...</div>
+        <div 
+            [class]="'alert '+classe.value"  role="alert">...</div>
+        <!-- <div class="alert alert-danger"  role="alert"
+            style="{{classe.value == 'alert-danger'?'display:block':'display:none'}}" >Este texto aparece caso erro</div> -->
+        <div class="alert alert-danger"  role="alert"
+            [style.display]="classe.value == 'alert-danger' ?'block':'none'">Este texto aparece em caso de erro</div>
+    </article>
+    
+    <article>
+        <h3>Interpolation</h3>              
+        <p>renderizado: {{ url }}</p>
+        <p>resultado {{2+5}}</p>
+        <p>Result {{1+1+ getValor()}}</p>
+        <p>{{cursoAngular && getCurtirCurso()}}</p>
+    </article>
+    
+    <article>
+        <h3>Property Binding</h3> 
+        <img src="{{ urlImagem}}">
+        <img [src]="urlImagem">
+        
+    </article>
+</section>
+ 
+
+ 
+
