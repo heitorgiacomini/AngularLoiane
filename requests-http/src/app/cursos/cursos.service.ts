@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Curso } from './curso';
 import { environment } from 'src/environments/environment';
 import { delay, Observable, take, tap } from 'rxjs';
+// import 'rxjs/add/operator/catch';
+// import { catchError } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +14,16 @@ export class CursosService {
   private readonly API = `${environment.API}/cursos`;
   constructor(private _http: HttpClient) { }
 
-  List() {
+  // private handleError (error: Response | any) {
+  //   console.error('ApiService::handleError', error);
+  //   return Observable.throw(error);
+  // }
+
+  List() : Observable<Curso[]>{
     return this._http.get<Curso[]>(this.API)
       .pipe(
         tap(console.log),
-        delay(600)
+        delay(600),
       );
   }
 
@@ -38,7 +46,7 @@ export class CursosService {
       take(1)
     );
   }
-  
+
   Delete(id:number){
     return this._http.delete(`${this.API}/${id}`)
     .pipe(

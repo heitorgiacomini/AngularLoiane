@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API: 'http://localhost:3000',
-  mediaServer : 'http://localhost:8000/'
+  mediaServer : 'http://192.168.1.3:8000/'
 };
 
 /*
