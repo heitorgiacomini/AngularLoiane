@@ -25,7 +25,7 @@ app.post('/upload', multipartMiddleware, (req, res) => {
 });
 
 app.get('/DownloadExcel', (req,res)=>{
-  res.download('./uploads/report.xlsx');
+  res.download('./uploads/report.txt');
 });
 
 app.get('/DownloadPDF', (req,res)=>{
